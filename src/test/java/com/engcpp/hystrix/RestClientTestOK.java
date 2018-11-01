@@ -32,8 +32,7 @@ public class RestClientTestOK {
     public RestClient restClient;
 
     @Rule
-    public WireMockRule server = new WireMockRule(options()
-        .dynamicPort());
+    public WireMockRule server = new WireMockRule(options().dynamicPort().jettyStopTimeout(1000l));
 
     private static final String PROFILE_NAME = "Mocked User";
     private static final String PROFILE_EMAIL = "mocked.user@engcpp.com";
